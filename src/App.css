@@ -1,38 +1,70 @@
 .App {
   text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-input {
+  width: 80%;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.games-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game-card {
+  width: 250px; /* Largeur fixe pour chaque carte */
+  height: 350px; /* Hauteur fixe pour chaque carte */
+  margin: 10px; /* Espacement entre les cartes */
+  border: 1px solid #ccc; /* Bordure pour chaque carte */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Évite le débordement du contenu */
+  display: flex;
+  flex-direction: column; /* Colonne pour empiler le contenu */
+  justify-content: flex-start; /* Alignement en haut */
+  text-align: center; /* Centre le texte */
+  transition: transform 0.2s; /* Effet de transition au survol */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-card:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
+.game-card img {
+  width: 100%; /* Image prend la largeur de la carte */
+  height: 150px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Ajuste l'image pour couvrir l'espace sans déformer */
+}
+
+.overlay {
+  flex-grow: 1; /* Permet à l'overlay d'occuper l'espace restant */
+  display: flex;
+  flex-direction: column; /* Empile les éléments dans l'overlay */
+  justify-content: flex-end; /* Aligne le contenu vers le bas */
+  background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour l'overlay */
+  color: white; /* Couleur du texte de l'overlay */
+  padding: 10px; /* Espacement intérieur de l'overlay */
+}
+
+.game-detail {
+  max-width: 800px; /* Largeur maximale de la zone de détail du jeu */
+  margin: 20px auto; /* Centrer la zone de détail avec un marges */
+  padding: 20px; /* Espacement interne */
+  border: 1px solid #ccc; /* Bordure pour la zone de détail */
+  border-radius: 8px; /* Coins arrondis */
+  background-color: #f9f9f9; /* Couleur de fond */
+}
+
+.game-detail img {
+  width: 100%; /* Image prend toute la largeur de la zone de détail */
+  max-height: 400px; /* Hauteur maximale pour l'image */
+  object-fit: cover; /* Ajuste l'image pour couvrir l'espace sans déformer */
+  border-radius: 8px; /* Coins arrondis pour l'image */
 }
